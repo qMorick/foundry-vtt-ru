@@ -376,7 +376,7 @@
 "DND5E.FlagsElvenAccuracy": "Эльфийская точность",
 "DND5E.FlagsElvenAccuracyHint": "Дополнительная кость при проверках ЛВК, ИНТ, МДР и ХАР с преимуществом.",
 "DND5E.FlagsHalflingLucky": "Везение полуросликов",
-"DND5E.FlagsHalflingLuckyHint": "Один переброс 1 при проверках d20.",
+"DND5E.FlagsHalflingLuckyHint": "Один переброс при проверках d20.",
 "DND5E.FlagsInitiativeAdv": "Преимущество инициативы",
 "DND5E.FlagsInitiativeAdvHint": "Проверки инициативы получают преимущество.",
 "DND5E.FlagsAlert": "Бдительный",

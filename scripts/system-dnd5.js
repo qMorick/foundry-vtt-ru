@@ -24,7 +24,7 @@ export function InitDND5() {
   });
 
   // Выбор источника перевода
-  game.settings.register("ru-ru", "altTranslation", {
+  game.settings.register("ru-ru-DnDno", "altTranslation", {
     name: "Использовать альтернативный перевод",
     hint: "(Требуется модуль libWrapper) Использовать альтернативный перевод D&D5e от Phantom Studio. Иначе будет использоваться официальный перевод издательства Hobby World.",
     type: Boolean,
@@ -38,7 +38,7 @@ export function InitDND5() {
   });
 
   // Настройка активации Babele
-  game.settings.register("ru-ru", "compendiumTranslation", {
+  game.settings.register("ru-ru-DnDno", "compendiumTranslation", {
     name: "Перевод библиотек",
     hint: "(Требуется модуль Babele) Некоторые библиотеки системы D&D5e будут переведены.",
     type: Boolean,
@@ -52,9 +52,9 @@ export function InitDND5() {
   });
 
 
-  if (game.settings.get("ru-ru", "altTranslation")) {
+  if (game.settings.get("ru-ru-DnDno", "altTranslation")) {
     if (typeof libWrapper === "function") {
-      libWrapper.register("ru-ru", "game.i18n._getTranslations", loadAltTranslation, "MIXED");
+      libWrapper.register("ru-ru-DnDno", "game.i18n._getTranslations", loadAltTranslation, "MIXED");
     } else {
       new Dialog({
         title: "Альтернативный перевод",
@@ -87,12 +87,12 @@ export function InitDND5() {
   // Регистрация Babele
   if (typeof Babele !== "undefined") {
     Babele.get().register({
-      module: "ru-ru",
+      module: "ru-ru-DnDno",
       lang: "ru",
-      dir: (game.settings.get("ru-ru", "altTranslation")) ? "compendium/dnd5e-alt" : "compendium/dnd5e",
+      dir: (game.settings.get("ru-ru-DnDno", "altTranslation")) ? "compendium/dnd5e-alt" : "compendium/dnd5e",
     });
   } else {
-    if (game.settings.get("ru-ru", "compendiumTranslation")) {
+    if (game.settings.get("ru-ru-DnDno", "compendiumTranslation")) {
       new Dialog({
         title: "Перевод библиотек",
         content: `<p>Для перевода библиотек системы D&D5 требуется установить и активировать модуль <b>Babele</b>. Вы можете отключить перевод библиотек в настройках модуля, чтобы это окно больше не отображалось.</p>`,
